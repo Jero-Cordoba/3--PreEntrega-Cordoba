@@ -1,0 +1,14 @@
+{% extends 'Home/base.html' %}
+
+{% block TITULO %} Crear Cliente {% endblock TITULO%}
+
+{% block CONTENIDO %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'home:home' %}">Ir a clientes</a>
+
+{% endblock CONTENIDO %}
