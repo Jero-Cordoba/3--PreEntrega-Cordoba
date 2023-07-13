@@ -2,7 +2,7 @@
 
 {% block TITULO %} Cliente {% endblock TITULO%}
 
-{% block CONTENIDO %}
+{% block INDEX_CONTENIDO %}
 
     {% for cliente in clientes %}
         <h2>{{cliente.nombre}} {{cliente.apellido}}</h2>
@@ -11,4 +11,4 @@
 
     <a href="{% url 'home:home' %}">Ir a clientes</a>
 
-{% endblock CONTENIDO %}
+{% endblock INDEX_CONTENIDO %}
