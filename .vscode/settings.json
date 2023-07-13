@@ -46,12 +46,5 @@
         "*.db": "sqlite-viewer.option",
         "*.sqlite3": "default"
     },
-    // *** DJLINT
-    "[django-html]": {
-        "editor.defaultFormatter": "monosans.djlint"
-    },
-    "emmet.includeLanguages": {
-        "django-html":"html",
-    },
     "workbench.iconTheme": "material-icon-theme",
 }
