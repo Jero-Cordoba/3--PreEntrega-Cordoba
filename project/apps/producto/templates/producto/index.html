@@ -1,9 +1,12 @@
 {% extends 'Home/base.html' %}
 
 {% block INDEX_TITULO %}
-    {{app}}
+    Propiedades en vista:
 {% endblock INDEX_TITULO %}
 
 {% block CONTENIDO %}
+    <!-- Todas las propiedades-->
+    <a href="{% url 'producto:CategoriaPropiedades_list' %}"> Lista de propiedades</a>
+    <br>
     <a href="{% url 'home:home' %}">Ir al menu principal"></a>
 {% endblock CONTENIDO%}

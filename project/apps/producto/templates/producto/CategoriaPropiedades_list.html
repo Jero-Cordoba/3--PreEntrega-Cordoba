@@ -1,0 +1,17 @@
+{% extends 'producto/index.html' %}
+
+{% block INDEX_TITULO %}
+   Lista de propiedades
+{% endblock INDEX_TITULO %}
+
+{% block CONTENIDO %}
+    {% if <object_list> %}
+        {% for object in object_list %}
+            <ul>
+                <li>{{ categoria.nombre }}</li>
+            </ul>
+    {% else %}
+        <p>No hay propiedades</p>
+    {% endif %}
+    <a href="{% url 'home:home' %}">Ir al menu principal"></a>
+{% endblock CONTENIDO%}
