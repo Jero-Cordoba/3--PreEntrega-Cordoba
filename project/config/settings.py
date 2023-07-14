@@ -10,12 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import sys
 from pathlib import Path
+
+from django.core.management.utils import get_random_secret_key
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-import sys
 
 APPS_DIR = BASE_DIR / 'apps'
 sys.path.append(str(APPS_DIR))
@@ -25,7 +27,7 @@ sys.path.append(str(APPS_DIR))
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--k%^yj73ihp)e7a$05+-^9@^y1@mpn7&arsd+=(!qwyz_=ldn2'
+SECRET_KEY = get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
