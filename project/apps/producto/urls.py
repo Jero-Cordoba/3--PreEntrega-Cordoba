@@ -1,13 +1,21 @@
 from django.urls import path
+from django.views.generic import TemplateView
 
 from . import views
 
 app_name = 'producto'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('CategoriaPropiedades/list/', views.CategoriaPropiedades_list,
+    path('', TemplateView.as_view(
+        template_name='producto/index.html'), name='home'),
+    path('CategoriaPropiedades/list/', views.CategoriaPropiedades_list.as_view(),
          name='CategoriaPropiedades_list'),
-    path('CategoriaPropiedades/create/', views.CategoriaPropiedades_create,
+    path('CategoriaPropiedades/create/', views.CategoriaPropiedades_create.as_view(),
          name='CategoriaPropiedades_create'),
+    path('CategoriaPropiedades/detail/<int:pk>', views.CategoriaPropiedades_detail.as_view(),
+         name='CategoriaPropiedades_detail'),
+    path('CategoriaPropiedades/update/<int:pk>', views.CategoriaPropiedades_update.as_view(),
+         name='CategoriaPropiedades_update'),
+    path('CategoriaPropiedades/delete/<int:pk>', views.CategoriaPropiedades_delete.as_view(),
+         name='CategoriaPropiedades_delete'),
 ]

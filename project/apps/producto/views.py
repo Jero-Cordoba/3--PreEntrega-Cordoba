@@ -1,7 +1,15 @@
-from django.shortcuts import render, redirect
+from django.http import HttpRequest, HttpResponse
+from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    UpdateView,
+)
 
-from . import forms
-from . import models
+from . import forms, models
 
 # Create your views here.
 
@@ -10,18 +18,26 @@ def index(request):
     return render(request, 'producto/index.html',)
 
 
-def CategoriaPropiedades_list(request):
-    categorias = models.CategoriaPropiedades.objects.all()
-    context = {'objects_list': categorias}
-    return render(request, 'producto/CategoriaPropiedades_list.html', context)
+class CategoriaPropiedades_list(ListView):
+    model = models.CategoriaPropiedades
 
 
-def CategoriaPropiedades_create(request):
-    if request.method == 'POST':
-        form = models.CategoriaPropiedadesForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('producto:home')
-    else:
-        form = forms.CategoriaPropiedadesForm()
-    return render(request, 'producto/CategoriaPropiedades_create.html', {'form': form})
+class CategoriaPropiedades_create(CreateView):
+    model = models.CategoriaPropiedades
+    form_class = forms.CategoriaPropiedadesForm
+    success_url = reverse_lazy('producto:CategoriaPropiedades_list')
+
+
+class CategoriaPropiedades_detail(DetailView):
+    model = models.CategoriaPropiedades
+
+
+class CategoriaPropiedades_update(UpdateView):
+    model = models.CategoriaPropiedades
+    form_class = forms.CategoriaPropiedadesForm
+    success_url = reverse_lazy('producto:CategoriaPropiedades_list')
+
+
+class CategoriaPropiedades_delete(DeleteView):
+    model = models.CategoriaPropiedades
+    success_url = reverse_lazy('producto:CategoriaPropiedades_list')
