@@ -8,5 +8,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('CategoriaPropiedades/list/', views.CategoriaPropiedades_list,
          name='CategoriaPropiedades_list'),
-
+    path('CategoriaPropiedades/create/', views.CategoriaPropiedades_create,
+         name='CategoriaPropiedades_create'),
 ]
