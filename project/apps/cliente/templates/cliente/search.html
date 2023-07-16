@@ -18,6 +18,22 @@
         {% for cliente in cliente_pais %}
             <p>{{ cliente }}</p>
         {% endfor %}
+
+    <h2>Documento del cliente:</h2>
+        {% for cliente in cliente_documento %}
+            <p>{{ cliente }}</p>
+        {% endfor %}
+
+    <h2>Telefono del cliente:</h2>
+        {% for cliente in cliente_telefono %}
+            <p>{{ cliente }}</p>
+        {% endfor %}
+
+    <h2>Mail del cliente:</h2>
+        {% for cliente in cliente_mail %}
+            <p>{{ cliente }}</p>
+        {% endfor %}
+        
     <a href="{% url 'home:home' %}">Ir a clientes</a>
 
 {% endblock CONTENIDO %}

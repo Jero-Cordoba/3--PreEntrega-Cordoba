@@ -6,9 +6,9 @@
 
     <form method="post">
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_p }}
         <button type="submit">Guardar</button>
     </form>
-    <a href="{% url 'home:home' %}">Ir a clientes</a>
+    <a href="{% url 'home:home' %}">Ir a Menu Principal</a>
 
 {% endblock CONTENIDO %}
