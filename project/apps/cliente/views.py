@@ -23,13 +23,13 @@ def crear_cliente(request):
     Pais_3 = Pais(nombre='Chile')
 
     Cliente_1 = Cliente(nombre='Juan', apellido='Perez',
-                        nacimiento=date(1995, 3, 27), pais_origen_id=Pais_1)
+                        nacimiento=date(1995, 3, 27), pais_origen_id=Pais_1, documento='12345678', telefono='123456789', email='WQF6B@example.com')
     Cliente_2 = Cliente(nombre='Jose', apellido='Gonzales',
-                        nacimiento=date(1999, 7, 13), pais_origen_id=Pais_2)
+                        nacimiento=date(1999, 7, 13), pais_origen_id=Pais_2, documento='12345678', telefono='123456789', email='WQF6B@example.com')
     Cliente_3 = Cliente(nombre='Maria', apellido='Beccerra',
-                        nacimiento=date(2000, 9, 7), pais_origen_id=Pais_3)
+                        nacimiento=date(2000, 9, 7), pais_origen_id=Pais_3, documento='12345678', telefono='123456789', email='WQF6B@example.com')
     Cliente_4 = Cliente(nombre='Juan', apellido='Pepe',
-                        nacimiento=date(2015, 4, 8), pais_origen_id=Pais_1)
+                        nacimiento=date(2015, 4, 8), pais_origen_id=Pais_1, documento='12345678', telefono='123456789', email='WQF6B@example.com')
 
     Cliente_1.save()
     Cliente_2.save()
