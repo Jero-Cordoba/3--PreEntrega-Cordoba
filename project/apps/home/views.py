@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
@@ -27,4 +28,18 @@ def login_request(request: HttpRequest) -> HttpResponse:
                 return redirect(request, 'home/index.html', {"mensaje": "Inicio de sesión exitoso"})
     else:
         form = forms.CustomAuthenticationForm()
-    return render(request, 'Home/login.html', {'form': forms})
+    return render(request, 'Home/login.html', {'form': form})
+
+
+@staff_member_required
+def register(request: HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        form = forms.CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            usuario = form.cleaned_data["username"]
+            password = form.cleaned_data["password1"]
+            form.save()
+            return redirect(request, 'home/index.html', {"mensaje": "Inicio de sesión exitoso"})
+    else:
+        form = forms.CustomUserCreationForm()
+    return render(request, 'home/register.html', {'form': form})
