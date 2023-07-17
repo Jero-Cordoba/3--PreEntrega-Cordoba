@@ -14,3 +14,8 @@ def __str__(self):
 class Meta:
     verbose_name = "Categoria de propiedades"
     verbose_name_plural = "Categorias de propiedades"
+
+
+class Propiedad(models.Model):
+    tipo = models.CharField(max_length=50)
+    descripcion = models.CharField(max_length=255, null=True, blank=True)
