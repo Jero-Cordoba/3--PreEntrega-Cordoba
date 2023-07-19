@@ -1,0 +1,17 @@
+{% extends 'producto/index.html' %}
+
+{% block INDEX_TITULO %}
+    Eliminación de propiedades:
+{% endblock INDEX_TITULO %}
+
+{% block CONTENIDO %}
+    
+    <p>class= "fs-5 fst-italic"> ¿Desea eliminar esta propiedad? "{{ object }}"</p>
+
+    <form action="post" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+    </form>
+
+    <a href="{% url 'home:home' %}">Ir al menu principal"></a>
+{% endblock CONTENIDO%}

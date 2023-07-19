@@ -1,18 +1,29 @@
 {% extends 'Home/base.html' %}
 
 {% block INDEX_TITULO %}
-    Propiedades en vista:
+    Propiedades:
 {% endblock INDEX_TITULO %}
 
 {% block CONTENIDO %}
     <!-- Todas las propiedades-->
-    <div class = "d-grid gap-3">
-    {% if user.is_staff %}
-        <a href="{% url 'producto:CategoriaPropiedades_create' %}" class="btn btn-primary"> Agregar propiedad</a>
-    {% endif %}
-        <br>
-        <a href="{% url 'producto:CategoriaPropiedades_list' %}" class="btn btn-primary"> Lista de propiedades</a>
-        <br>
-        <a href="{% url 'home:home' %}">Ir al menu principal"></a>
-    </div>
+    <h3 class = "pb-lg-3">Propiedades en vista:</h3>
+        <div class = "d-grid gap-3">
+            {% if user.is_staff %}
+                <a href="{% url 'producto:CategoriaPropiedades_create' %}" class="btn btn-primary"> Agregar propiedad</a>
+            {% endif %}
+                <br>
+                <a href="{% url 'producto:CategoriaPropiedades_list' %}" class="btn btn-primary"> Lista de propiedades</a>
+                <br>
+        </div>
+    <h3 class = "pb-lg-3">Propiedades</h3>
+        <div class = "d-grid gap-3">
+            {% if user.is_staff %}
+                <a href="{% url 'producto:CategoriaPropiedades_create' %}" class="btn btn-primary"> Agregar propiedad</a>
+            {% endif %}
+                <br>
+                <a href="{% url 'producto:CategoriaPropiedades_list' %}" class="btn btn-primary"> Lista de propiedades</a>
+                <br>
+        </div>
+    <a href="{% url 'home:home' %}">Ir al menu principal"></a>
+
 {% endblock CONTENIDO%}

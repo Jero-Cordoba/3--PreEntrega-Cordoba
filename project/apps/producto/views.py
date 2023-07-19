@@ -42,3 +42,28 @@ class CategoriaPropiedades_update(UpdateView):
 class CategoriaPropiedades_delete(DeleteView):
     model = models.CategoriaPropiedades
     success_url = reverse_lazy('producto:CategoriaPropiedades_list')
+
+
+class Propiedad_list(ListView):
+    model = models.Propiedad
+
+
+class Propiedad_create(CreateView):
+    model = models.Propiedad
+    form_class = forms.PropiedadForm
+    success_url = reverse_lazy('producto:Propiedad_list')
+
+
+class Propiedad_detail(DetailView):
+    model = models.Propiedad
+
+
+class Propiedad_update(UpdateView):
+    model = models.Propiedad
+    form_class = forms.PropiedadForm
+    success_url = reverse_lazy('producto:Propiedad_list')
+
+
+class Propiedad_delete(DeleteView):
+    model = models.Propiedad
+    success_url = reverse_lazy('producto:Propiedad_list')

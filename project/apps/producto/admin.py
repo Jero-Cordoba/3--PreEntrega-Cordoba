@@ -4,7 +4,7 @@ from . import models
 
 admin.site.site_title = "Propiedad"
 
-admin.site.register(models.CategoriaPropiedades)
+# admin.site.register(models.CategoriaPropiedades)
 
 
 @admin.register(models.CategoriaPropiedades)
@@ -15,4 +15,15 @@ class CategoriaPropiedadesAdmin(admin.ModelAdmin):
     ordering = ('nombre',)
 
 
-admin.site.register(models.CategoriaPropiedades, CategoriaPropiedadesAdmin)
+@admin.register(models.Propiedad)
+class PropiedadAdmin(admin.ModelAdmin):
+    list_display = ('categoria', 'nombre',
+                    'precio', 'descripcion', 'fecha_actualizacion',)
+    list_display_links = ('categoria', 'nombre',)
+    list_filter = ('categoria', 'nombre',
+                   'precio', 'descripcion', 'fecha_actualizacion',)
+    search_fields = ('categoria', 'nombre',
+                     'precio', 'descripcion', 'fecha_actualizacion',)
+    ordering = ('categoria', 'nombre',
+                'precio', 'descripcion', 'fecha_actualizacion',)
+    date_hierarchy = 'fecha_actualizacion'
