@@ -15,5 +15,8 @@ Para ingresar al entorno virtual de pruebas tiene que seguir estos pasos:
 -Para activar el entorno virtual tambien se puede usar "venv/Scripts/active
 
 ## Errores conocidos
+El login te aparece el inicio de la pagina y no podes acceder a ella sin loguearte
+La tecla "contactanos" esta inahibilitada 
 
 ## Futuras mejoras
+Arreglar el login, contactarnos y hacerlo más detallado
