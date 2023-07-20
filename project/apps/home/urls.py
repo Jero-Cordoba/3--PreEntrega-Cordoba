@@ -11,7 +11,7 @@ app_name = 'home'
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('login/', views.login_request, name='login'),
+    path('login/', LoginView.as_view(template_name='home/login.html'), name='login'),
     path('logout/', LogoutView.as_view(template_name='home/logout.html'), name='logout'),
     path('about/', TemplateView.as_view(template_name='home/about.html'), name='about'),
     path('register/', views.register, name='register'),
