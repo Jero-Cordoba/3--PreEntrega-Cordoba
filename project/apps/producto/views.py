@@ -1,4 +1,7 @@
+from typing import Any
+
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import QuerySet
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
@@ -46,6 +49,15 @@ class CategoriaPropiedades_delete(DeleteView):
 
 class Propiedad_list(ListView):
     model = models.Propiedad
+
+    def get_queryset(self) -> QuerySet[Any]:
+        if self.request.GET["consultar"]:
+            consultar = self.request.GET["consultar"]
+            object_list = models.Propiedad.objects.filter(
+                nombre__icontains=consultar)
+        else:
+            object_list = models.Propiedad.objects.all()
+        return object_list
 
 
 class Propiedad_create(CreateView):

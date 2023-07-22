@@ -6,16 +6,24 @@
 
 {% block CONTENIDO %}
     {% if <object_list> %}
+        <div>
+            <form action="{% url 'producto:Propiedades_List' %}" method="get">
+                <input type="text" name="Consulta" placeholder="Buscar:...">
+            </form>
+        </div>
         {% for object in object_list %}
             <ul>
                 <li>{{ categoria.nombre }} ${{ object.precio }}
-                    <a href="{% url 'producto:Propiedades_List'object.id %}">Ir al detalle"></a>
-                    <a href="{% url 'producto:Propiedades_update'object.id %}">Actualizar"></a>
-                    <a href="{% url 'producto:Propiedades_delete'object.id %}">Eliminar"></a>
+                    <a href="{% url 'producto:Propiedades_List'object.id %}" class="btn btn-secondary btn-sm">
+                    Ir al detalle"></a>
+                    <a href="{% url 'producto:Propiedades_update'object.id %}" class="btn btn-primary btn-sm"
+                    >Actualizar"></a>
+                    <a href="{% url 'producto:Propiedades_delete'object.id %}" class="btn btn-danger btn-sm"
+                    >Eliminar"></a>
                 </li>
             </ul>
     {% else %}
         <p>No hay propiedades</p>
     {% endif %}
-    <a href="{% url 'home:home' %}">Ir al menu principal"></a>
+    {% include 'home/index_back.html' %}
 {% endblock CONTENIDO%}

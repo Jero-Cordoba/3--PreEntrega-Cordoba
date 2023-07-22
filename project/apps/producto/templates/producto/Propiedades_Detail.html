@@ -11,5 +11,5 @@
         <li>Descripción: {{ object.descripcion }}</li>
     </ul>
 
-    <a href="{% url 'home:home' %}">Ir al menu principal"></a>
+    {% include 'home/index_back.html' %}
 {% endblock CONTENIDO%}
