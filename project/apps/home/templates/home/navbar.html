@@ -10,6 +10,11 @@
                 <li class="nav-item"><a class="nav-link {% if request.path == '/cliente/' %} active {% endif %}" href="{% url 'cliente:home' %}">Cliente</a></li>
                 <li class="nav-item"><a class="nav-link {% if request.path == '/producto/' %} active {% endif %}" href="{% url 'producto:home' %}">Propiedades</a></li>
                 <li class="nav-item"><a class="nav-link text-bg-info ">{{ user.username }}</a></li>
+                {% if user.vendedor.avatar.url %}
+                    <li class="nav-item"><img src="{{ user.vendedor.avatar.url }}" alt="avatar" class=""></li>
+                    {% else %}
+                    <li class="nav-item"><img src="{% static 'venta/avatares.png' '%}" alt="avatar" class="" style="height: 36px"></li>
+                {% endif %}
                 <li class="nav-item"><a class="nav-link text-info " href="{% url 'home:logout' %}">LogOut</a></li>
 
                 {% else %}

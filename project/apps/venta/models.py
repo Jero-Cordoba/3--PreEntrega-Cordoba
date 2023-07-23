@@ -26,7 +26,7 @@ class Venta(models.Model):
     fecha = models.DateTimeField(default=timezone.now, editable=False)
 
     class Meta:
-        ordering = ('-fecha_\venta',)
+        ordering = ('-fecha_venta',)
 
     def clean(self):
         if self.cantidad > self.producto.stock:
