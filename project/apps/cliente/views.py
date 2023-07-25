@@ -8,7 +8,7 @@ from .forms import ClienteForm
 from .models import Cliente, Pais
 
 
-def home(request):
+def Home(request):
     clientes_registros = Cliente.objects.all()
     contexto = {'clientes': clientes_registros}
     return render(request, 'cliente/index.html', contexto)
@@ -35,7 +35,7 @@ def crear_cliente(request):
     Cliente_3.save()
     Cliente_4.save()
 
-    return redirect("cliente:home")
+    return redirect("cliente:Home")
 
 
 def crear_clientes(request: HttpRequest) -> HttpResponse:
@@ -45,7 +45,7 @@ def crear_clientes(request: HttpRequest) -> HttpResponse:
         form = ClienteForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("cliente:home")
+            return redirect("cliente:Home")
     else:
 
         form = ClienteForm()

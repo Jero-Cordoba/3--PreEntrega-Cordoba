@@ -1,11 +1,11 @@
 from django.urls import path
 
-from .views import busqueda, crear_cliente, crear_clientes, home
+from .views import Home, busqueda, crear_cliente, crear_clientes
 
 app_name = 'cliente'
 
 urlpatterns = [
-    path('', home, name='Home'),
+    path('', Home, name='Home'),
     path('crear_clientes/', crear_clientes, name='crear_cliente'),
     path('crear/', crear_cliente, name='crear'),
     path('busqueda/', busqueda, name='busqueda'),

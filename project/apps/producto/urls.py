@@ -4,10 +4,10 @@ from . import views
 
 app_name = 'producto'
 
-urlpatterns = [path('', views.index, name='home'),]
+urlpatterns = [path('', views.index, name='Home'),]
 
 urlpatterns += [
-    path('', views.index, name='home'),
+    path('', views.index, name='Home'),
     path('CategoriaPropiedades/list/', views.CategoriaPropiedades_list.as_view(),
          name='CategoriaPropiedades_list'),
     path('CategoriaPropiedades/create/', views.CategoriaPropiedades_create.as_view(),
