@@ -1,6 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
 from . import models
 
 admin.site.register(models.Vendedor)
@@ -11,7 +10,6 @@ class VentaAdmin(admin.ModelAdmin):
     list_display = (
         "vendedor",
         "producto",
-        "cantidad",
         "precio_total",
         "fecha_venta"
     )
