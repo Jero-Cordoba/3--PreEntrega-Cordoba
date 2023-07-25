@@ -1,5 +1,6 @@
 from typing import Any
 
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import QuerySet
 from django.http import HttpRequest, HttpResponse
@@ -18,6 +19,7 @@ from . import forms, models
 # Create your views here.
 
 
+@login_required
 def index(request):
     return render(request, 'producto/index.html',)
 

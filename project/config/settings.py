@@ -117,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 
 USE_I18N = True
 
@@ -134,9 +134,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = reverse_lazy('home:login')
+LOGIN_URL = reverse_lazy('Home:login')
 
-LOGIN_REDIRECT_URL = reverse_lazy('home:index')
+LOGIN_REDIRECT_URL = reverse_lazy('Home:index')
 
-MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'

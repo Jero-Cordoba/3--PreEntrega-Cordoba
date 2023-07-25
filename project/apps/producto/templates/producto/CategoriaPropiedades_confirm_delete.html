@@ -6,12 +6,12 @@
 
 {% block CONTENIDO %}
     
-    <p>class= "fs-5 fst-italic"> ¿Desea eliminar esta propiedad? "{{ object }}"</p>
+    <p class= "fs-5 fst-italic"> ¿Desea eliminar esta propiedad? "{{ object }}"</p>
 
     <form action="post" method="post">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Confirmar</button>
     </form>
 
-    {% include 'home/index_back.html' %}
+    {% include 'Home/index_back.html' %}
 {% endblock CONTENIDO%}

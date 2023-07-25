@@ -2,11 +2,10 @@ from datetime import date
 
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
+from django.urls import is_valid_path
 
 from .forms import ClienteForm
 from .models import Cliente, Pais
-
-# Create your views here.
 
 
 def home(request):

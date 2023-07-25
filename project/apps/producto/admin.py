@@ -19,11 +19,8 @@ class CategoriaPropiedadesAdmin(admin.ModelAdmin):
 class PropiedadAdmin(admin.ModelAdmin):
     list_display = ('categoria', 'nombre',
                     'precio', 'descripcion', 'fecha_actualizacion',)
-    list_display_links = ('categoria', 'nombre',)
-    list_filter = ('categoria', 'nombre',
-                   'precio', 'descripcion', 'fecha_actualizacion',)
-    search_fields = ('categoria', 'nombre',
-                     'precio', 'descripcion', 'fecha_actualizacion',)
-    ordering = ('categoria', 'nombre',
-                'precio', 'descripcion', 'fecha_actualizacion',)
+    list_display_links = ('nombre',)
+    search_fields = ('nombre',)
+    ordering = ('categoria', 'nombre',)
+    list_filter = ('categoria',)
     date_hierarchy = 'fecha_actualizacion'

@@ -6,7 +6,7 @@
 
 {% block CONTENIDO %}
     {% if <object_list> %}
-        <div>
+        <div class="py-lg-4">
             <form action="{% url 'producto:Propiedades_List' %}" method="get">
                 <input type="text" name="Consulta" placeholder="Buscar:...">
             </form>
@@ -14,7 +14,7 @@
         {% for object in object_list %}
             <ul>
                 <li>{{ categoria.nombre }} ${{ object.precio }}
-                    <a href="{% url 'producto:Propiedades_List'object.id %}" class="btn btn-secondary btn-sm">
+                    <a href="{% url 'producto:Propiedades_detail'object.id %}" class="btn btn-secondary btn-sm">
                     Ir al detalle"></a>
                     <a href="{% url 'producto:Propiedades_update'object.id %}" class="btn btn-primary btn-sm"
                     >Actualizar"></a>
@@ -22,8 +22,9 @@
                     >Eliminar"></a>
                 </li>
             </ul>
+        {% endfor %}        
     {% else %}
-        <p>No hay propiedades</p>
+        <p class="fs-4 fst-italic ">No hay propiedades</p>
     {% endif %}
-    {% include 'home/index_back.html' %}
+    {% include 'Home/index_back.html' %}
 {% endblock CONTENIDO%}

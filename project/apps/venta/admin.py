@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+# Register your models here.
 from . import models
 
 admin.site.register(models.Vendedor)
@@ -7,10 +8,14 @@ admin.site.register(models.Vendedor)
 
 @admin.register(models.Venta)
 class VentaAdmin(admin.ModelAdmin):
-    list_display = ('vendedor', 'producto', 'cantidad', 'precio', 'fecha')
-    list_display_links = ('producto',)
-    search_fields = ('producto__nombre',)
-    list_filter = ('producto__nombre', 'vendedor',)
-
-
-admin.site.register(models.Venta, VentaAdmin)
+    list_display = (
+        "vendedor",
+        "producto",
+        "cantidad",
+        "precio_total",
+        "fecha_venta"
+    )
+    list_display_links = ("producto",)
+    search_fields = ("producto.nombre", "vendedor")
+    list_filter = ("vendedor",)
+    date_hierarchy = "fecha_venta"
