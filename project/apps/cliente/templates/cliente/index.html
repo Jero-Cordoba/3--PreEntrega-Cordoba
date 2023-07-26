@@ -1,4 +1,4 @@
-{% extends 'Inicio/index.html' %}
+{% extends 'home/index.html' %}
 
 {% block TITULO %} Cliente {% endblock TITULO%}
 
@@ -11,6 +11,6 @@
         <p>{{cliente.email}}</p>
     {% endfor %}
 
-    <a href="{% url 'home:Inicio' %}">Ir a clientes</a>
+    <a href="{% url 'home:home' %}">Ir a clientes</a>
 
 {% endblock INDEX_CONTENIDO %}

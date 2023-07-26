@@ -5,7 +5,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link {% if request.path == '/home/' %} active {% endif %}" aria-current="page" href="{% url 'home:home' %}">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == '/home/' %} active {% endif %}" aria-current="page" href="{% url 'home:home' %}">home</a></li>
                 
                 {% if user.is_authenticated %}
                 <li class="nav-item"><a class="nav-link {% if request.path == '/cliente/' %} active {% endif %}" href="{% url 'cliente:home' %}">Cliente</a></li>
@@ -16,12 +16,12 @@
                     {% else %}
                     <li class="nav-item"><img src="{% static 'venta/static/img/avatar.png' '%}" alt="avatar" class="" style="height: 36px"></li>
                 {% endif %}
-                <li class="nav-item"><a class="nav-link text-info " href="{% url 'Inicio:logout' %}">LogOut</a></li>
+                <li class="nav-item"><a class="nav-link text-info " href="{% url 'home:logout' %}">LogOut</a></li>
 
                 {% else %}
                 <li class="nav-item"><a class="nav-link {% if request.path == '/about/' %} active {% endif %}" href="{% url 'home:about' %}">Propiedades</a></li>
                 <li class="nav-item"><a class="nav-link {% if request.path == '/contacto/' %} active {% endif %}" href="{% url 'home:contacto' %}">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link text-info " href="{% url 'Inicio:login' %}">LogIn</a></li>
+                <li class="nav-item"><a class="nav-link text-info " href="{% url 'home:login' %}">LogIn</a></li>
                 {% endif %}
             </ul>
         </div>

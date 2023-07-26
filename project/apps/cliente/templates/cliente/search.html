@@ -1,4 +1,4 @@
-{% extends 'Inicio/base.html' %}
+{% extends 'home/base.html' %}
 
 {% block TITULO %} Busqueda {% endblock TITULO%}
 
@@ -34,6 +34,6 @@
             <p>{{ cliente }}</p>
         {% endfor %}
         
-    <a href="{% url 'home:Inicio' %}">Ir a clientes</a>
+    <a href="{% url 'home:home' %}">Ir a clientes</a>
 
 {% endblock CONTENIDO %}

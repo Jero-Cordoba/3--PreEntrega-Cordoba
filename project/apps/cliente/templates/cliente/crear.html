@@ -1,4 +1,4 @@
-{% extends 'Inicio/base.html' %}
+{% extends 'home/base.html' %}
 
 {% block TITULO %} Crear Cliente {% endblock TITULO%}
 
@@ -9,6 +9,6 @@
         {{ form.as_p }}
         <button type="submit">Guardar</button>
     </form>
-    <a href="{% url 'home:Inicio' %}">Ir a Menu Principal</a>
+    <a href="{% url 'home:home' %}">Ir a Menu Principal</a>
 
 {% endblock CONTENIDO %}

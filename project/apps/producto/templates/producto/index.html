@@ -1,4 +1,4 @@
-{% extends 'Inicio/index.html' %}
+{% extends 'home/index.html' %}
 
 {% block INDEX_TITULO %}
     Propiedades:
@@ -24,5 +24,5 @@
                 <a href="{% url 'producto:CategoriaPropiedad_list' %}" class="btn btn-primary"> Lista de propiedades</a>
                 <br>
         </div>
-    {% include 'Inicio/index_back.html' %}
+    {% include 'home/index_back.html' %}
 {% endblock CONTENIDO%}
