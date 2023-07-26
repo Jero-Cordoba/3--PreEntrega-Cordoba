@@ -13,8 +13,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='home/logout.html'), name='logout'),
     path('about/', TemplateView.as_view(template_name='home/about.html'), name='about'),
     path('register/', views.register, name='register'),
-    path('contacto/', TemplateView.as_view(template_name='home/contacto.html'), name='contact'),
-    path('about/', TemplateView.as_view(template_name='home/about.html'), name='about'),
+    path('contacto/', TemplateView.as_view(template_name='home/contacto.html'), name='contacto'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
