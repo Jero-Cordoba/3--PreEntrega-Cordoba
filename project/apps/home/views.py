@@ -9,7 +9,7 @@ from django.shortcuts import redirect, render
 from . import forms
 
 
-def home(request):
+def Home(request):
     return render(request, 'Home/index.html')
 
 
