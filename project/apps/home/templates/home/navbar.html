@@ -20,7 +20,7 @@
 
                 {% else %}
                 <li class="nav-item"><a class="nav-link {% if request.path == '/about/' %} active {% endif %}" href="{% url 'home:about' %}">Propiedades</a></li>
-                <li class="nav-item"><a class="nav-link {% if request.path == '/contacto/' %} active {% endif %}" href="{% url 'home:contacto' %}">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == '/contacto/' %} active {% endif %}" href="{% url 'home:contacto' %}|">Contacto</a></li>
                 <li class="nav-item"><a class="nav-link text-info " href="{% url 'home:login' %}">LogIn</a></li>
                 {% endif %}
             </ul>
