@@ -9,19 +9,19 @@
     <h3 class = "pb-lg-3">Propiedades en vista:</h3>
         <div class = "d-grid gap-3">
             {% if user.is_staff %}
-                <a href="{% url 'producto:CategoriaPropiedades_create' %}" class="btn btn-primary"> Agregar propiedad</a>
+                <a href="{% url 'producto:CategoriaPropiedad_create' %}" class="btn btn-primary"> Agregar propiedad</a>
             {% endif %}
                 <br>
-                <a href="{% url 'producto:CategoriaPropiedades_list' %}" class="btn btn-primary"> Lista de propiedades</a>
+                <a href="{% url 'producto:CategoriaPropiedad_list' %}" class="btn btn-primary"> Lista de propiedades</a>
                 <br>
         </div>
     <h3 class = "pb-lg-3">Propiedades</h3>
         <div class = "d-grid gap-3">
             {% if user.is_staff %}
-                <a href="{% url 'producto:CategoriaPropiedades_create' %}" class="btn btn-primary"> Agregar propiedad</a>
+                <a href="{% url 'producto:CategoriaPropiedad_create' %}" class="btn btn-primary"> Agregar propiedad</a>
             {% endif %}
                 <br>
-                <a href="{% url 'producto:CategoriaPropiedades_list' %}" class="btn btn-primary"> Lista de propiedades</a>
+                <a href="{% url 'producto:CategoriaPropiedad_list' %}" class="btn btn-primary"> Lista de propiedades</a>
                 <br>
         </div>
     {% include 'Inicio/index_back.html' %}

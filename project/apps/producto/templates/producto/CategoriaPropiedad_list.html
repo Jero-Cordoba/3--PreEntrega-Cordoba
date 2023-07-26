@@ -9,9 +9,9 @@
         {% for object in object_list %}
             <ul>
                 <li>{{ categoria.nombre }}
-                    <a href="{% url 'producto:CategoriaPropiedades_detail'object.id %}">Ir al detalle"></a>
-                    <a href="{% url 'producto:CategoriaPropiedades_update'object.id %}">Actualizar"></a>
-                    <a href="{% url 'producto:CategoriaPropiedades_delete'object.id %}">Eliminar"></a>
+                    <a href="{% url 'producto:CategoriaPropiedad_detail'object.id %}">Ir al detalle"></a>
+                    <a href="{% url 'producto:CategoriaPropiedad_update'object.id %}">Actualizar"></a>
+                    <a href="{% url 'producto:CategoriaPropiedad_delete'object.id %}">Eliminar"></a>
                 </li>
             </ul>
     {% else %}

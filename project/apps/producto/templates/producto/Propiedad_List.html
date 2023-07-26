@@ -7,18 +7,18 @@
 {% block CONTENIDO %}
     {% if <object_list> %}
         <div class="py-lg-4">
-            <form action="{% url 'producto:Propiedades_List' %}" method="get">
+            <form action="{% url 'producto:Propiedad_List' %}" method="get">
                 <input type="text" name="Consulta" placeholder="Buscar:...">
             </form>
         </div>
         {% for object in object_list %}
             <ul>
                 <li>{{ categoria.nombre }} ${{ object.precio }}
-                    <a href="{% url 'producto:Propiedades_detail'object.id %}" class="btn btn-secondary btn-sm">
+                    <a href="{% url 'producto:Propiedad_detail'object.id %}" class="btn btn-secondary btn-sm">
                     Ir al detalle"></a>
-                    <a href="{% url 'producto:Propiedades_update'object.id %}" class="btn btn-primary btn-sm"
+                    <a href="{% url 'producto:Propiedad_update'object.id %}" class="btn btn-primary btn-sm"
                     >Actualizar"></a>
-                    <a href="{% url 'producto:Propiedades_delete'object.id %}" class="btn btn-danger btn-sm"
+                    <a href="{% url 'producto:Propiedad_delete'object.id %}" class="btn btn-danger btn-sm"
                     >Eliminar"></a>
                 </li>
             </ul>

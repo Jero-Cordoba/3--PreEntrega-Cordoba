@@ -30,7 +30,7 @@ class CategoriaPropiedad_list(ListView):
 
 class CategoriaPropiedad_create(CreateView):
     model = models.CategoriaPropiedad
-    form_class = forms.CategoriaPropiedadesForm
+    form_class = forms.CategoriaPropiedadForm
     success_url = reverse_lazy('producto:CategoriaPropiedad_list')
 
 
@@ -40,7 +40,7 @@ class CategoriaPropiedad_detail(DetailView):
 
 class CategoriaPropiedad_update(UpdateView):
     model = models.CategoriaPropiedad
-    form_class = forms.CategoriaPropiedadesForm
+    form_class = forms.CategoriaPropiedadForm
     success_url = reverse_lazy('producto:CategoriaPropiedad_list')
 
 

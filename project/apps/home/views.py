@@ -9,8 +9,8 @@ from django.shortcuts import redirect, render
 from . import forms
 
 
-def Home(request):
-    return render(request, 'home/index.html')
+def home(request):
+    return render(request, 'Inicio/index.html')
 
 
 def login_request(request: HttpRequest) -> HttpResponse:
@@ -22,10 +22,10 @@ def login_request(request: HttpRequest) -> HttpResponse:
             user = authenticate(username=usuario, password=password)
             if user is not None:
                 login(request, user)
-#                return redirect(request, 'home/index.html', {"mensaje": "Inicio de sesión exitoso"})
+                return redirect(request, 'Inicio/index.html', {"mensaje": "Inicio de sesión exitoso"})
     else:
         form = forms.CustomAuthenticationForm()
-    return render(request, 'home/login.html', {'form': form})
+    return render(request, 'Inicio/login.html', {'form': form})
 
 
 @staff_member_required
@@ -36,7 +36,7 @@ def register(request: HttpRequest) -> HttpResponse:
             usuario = form.cleaned_data["username"]
             password = form.cleaned_data["password1"]
             form.save()
-            return redirect(request, 'home/index.html', {"mensaje": "Inicio de sesión exitoso"})
+            return redirect(request, 'Inicio/index.html', {"mensaje": "Inicio de sesión exitoso"})
     else:
         form = forms.CustomUserCreationForm()
-    return render(request, 'home/register.html', {'form': form})
+    return render(request, 'Inicio/register.html', {'form': form})

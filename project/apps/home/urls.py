@@ -5,16 +5,16 @@ from django.views.generic.base import TemplateView
 
 from . import views
 
-app_name = 'Home'
+app_name = 'home'
 
 urlpatterns = [
-    path('', views.Home, name='Home'),
+    path('', views.home, name='home'),
     path('login/', views.login_request, name='login'),
-    path('logout/', LogoutView.as_view(template_name='Home/logout.html'), name='logout'),
-    path('about/', TemplateView.as_view(template_name='Home/about.html'), name='about'),
+    path('logout/', LogoutView.as_view(template_name='Inicio/logout.html'), name='logout'),
+    path('about/', TemplateView.as_view(template_name='Inicio/about.html'), name='about'),
     path('register/', views.register, name='register'),
-    path('contact/', TemplateView.as_view(template_name='Home/contact.html'), name='contact'),
-    path('about/', TemplateView.as_view(template_name='Home/about.html'), name='about'),
+    path('contact/', TemplateView.as_view(template_name='Inicio/contact.html'), name='contact'),
+    path('about/', TemplateView.as_view(template_name='Inicio/about.html'), name='about'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -5,7 +5,7 @@ from django import forms
 from . import models
 
 
-class CategoriaPropiedadesForm(forms.ModelForm):
+class CategoriaPropiedadForm(forms.ModelForm):
     class Meta:
         model = models.CategoriaPropiedad
         fields = "__all__"
