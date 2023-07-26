@@ -7,7 +7,7 @@ admin.site.site_title = "Propiedad"
 # admin.site.register(models.CategoriaPropiedades)
 
 
-@admin.register(models.CategoriaPropiedades)
+@admin.register(models.CategoriaPropiedad)
 class CategoriaPropiedadesAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'descripcion',)
     list_filter = ('nombre',)

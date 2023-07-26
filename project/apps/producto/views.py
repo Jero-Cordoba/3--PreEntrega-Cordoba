@@ -24,29 +24,29 @@ def index(request):
     return render(request, 'producto/index.html',)
 
 
-class CategoriaPropiedades_list(ListView):
-    model = models.CategoriaPropiedades
+class CategoriaPropiedad_list(ListView):
+    model = models.CategoriaPropiedad
 
 
-class CategoriaPropiedades_create(CreateView):
-    model = models.CategoriaPropiedades
+class CategoriaPropiedad_create(CreateView):
+    model = models.CategoriaPropiedad
     form_class = forms.CategoriaPropiedadesForm
-    success_url = reverse_lazy('producto:CategoriaPropiedades_list')
+    success_url = reverse_lazy('producto:CategoriaPropiedad_list')
 
 
-class CategoriaPropiedades_detail(DetailView):
-    model = models.CategoriaPropiedades
+class CategoriaPropiedad_detail(DetailView):
+    model = models.CategoriaPropiedad
 
 
-class CategoriaPropiedades_update(UpdateView):
-    model = models.CategoriaPropiedades
+class CategoriaPropiedad_update(UpdateView):
+    model = models.CategoriaPropiedad
     form_class = forms.CategoriaPropiedadesForm
-    success_url = reverse_lazy('producto:CategoriaPropiedades_list')
+    success_url = reverse_lazy('producto:CategoriaPropiedad_list')
 
 
-class CategoriaPropiedades_delete(DeleteView):
-    model = models.CategoriaPropiedades
-    success_url = reverse_lazy('producto:CategoriaPropiedades_list')
+class CategoriaPropiedad_delete(DeleteView):
+    model = models.CategoriaPropiedad
+    success_url = reverse_lazy('producto:CategoriaPropiedad_list')
 
 
 class Propiedad_list(ListView):

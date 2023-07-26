@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class CategoriaPropiedades(models.Model):
+class CategoriaPropiedad(models.Model):
     nombre = models.CharField(max_length=50, unique=True)
     descripcion = models.CharField(
         max_length=255, null=True, blank=True, verbose_name="Descripción")
@@ -15,7 +15,7 @@ class Meta:
 
 class Propiedad(models.Model):
     categoria = models.ForeignKey(
-        CategoriaPropiedades, on_delete=models.SET_NULL, blank=True, null=True)
+        CategoriaPropiedad, on_delete=models.SET_NULL, blank=True, null=True)
     nombre = models.CharField(max_length=150)
     unidad_de_medida = models.CharField(max_length=100)
     precio = models.DecimalField(

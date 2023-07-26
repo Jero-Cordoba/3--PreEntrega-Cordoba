@@ -8,15 +8,15 @@ urlpatterns = [path('', views.index, name='Home'),]
 
 urlpatterns += [
     path('', views.index, name='Home'),
-    path('CategoriaPropiedades/list/', views.CategoriaPropiedades_list.as_view(),
+    path('CategoriaPropiedades/list/', views.CategoriaPropiedad_list.as_view(),
          name='CategoriaPropiedades_list'),
-    path('CategoriaPropiedades/create/', views.CategoriaPropiedades_create.as_view(),
+    path('CategoriaPropiedades/create/', views.CategoriaPropiedad_create.as_view(),
          name='CategoriaPropiedades_create'),
-    path('CategoriaPropiedades/detail/<int:pk>', views.CategoriaPropiedades_detail.as_view(),
+    path('CategoriaPropiedades/detail/<int:pk>', views.CategoriaPropiedad_detail.as_view(),
          name='CategoriaPropiedades_detail'),
-    path('CategoriaPropiedades/update/<int:pk>', views.CategoriaPropiedades_update.as_view(),
+    path('CategoriaPropiedades/update/<int:pk>', views.CategoriaPropiedad_update.as_view(),
          name='CategoriaPropiedades_update'),
-    path('CategoriaPropiedades/delete/<int:pk>', views.CategoriaPropiedades_delete.as_view(),
+    path('CategoriaPropiedades/delete/<int:pk>', views.CategoriaPropiedad_delete.as_view(),
          name='CategoriaPropiedades_delete'),
 ]
 

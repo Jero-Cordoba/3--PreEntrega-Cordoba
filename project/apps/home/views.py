@@ -10,7 +10,7 @@ from . import forms
 
 
 def Home(request):
-    return render(request, 'Home/index.html')
+    return render(request, 'home/index.html')
 
 
 def login_request(request: HttpRequest) -> HttpResponse:
@@ -22,10 +22,10 @@ def login_request(request: HttpRequest) -> HttpResponse:
             user = authenticate(username=usuario, password=password)
             if user is not None:
                 login(request, user)
-                return redirect(request, 'Home/index.html', {"mensaje": "Inicio de sesión exitoso"})
+                return redirect(request, 'home/index.html', {"mensaje": "Inicio de sesión exitoso"})
     else:
         form = forms.CustomAuthenticationForm()
-    return render(request, 'Home/login.html', {'form': form})
+    return render(request, 'home/login.html', {'form': form})
 
 
 @staff_member_required
@@ -36,7 +36,7 @@ def register(request: HttpRequest) -> HttpResponse:
             usuario = form.cleaned_data["username"]
             password = form.cleaned_data["password1"]
             form.save()
-            return redirect(request, 'Home/index.html', {"mensaje": "Inicio de sesión exitoso"})
+            return redirect(request, 'home/index.html', {"mensaje": "Inicio de sesión exitoso"})
     else:
         form = forms.CustomUserCreationForm()
-    return render(request, 'Home/register.html', {'form': form})
+    return render(request, 'home/register.html', {'form': form})

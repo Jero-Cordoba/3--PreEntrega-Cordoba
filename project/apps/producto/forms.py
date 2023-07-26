@@ -7,7 +7,7 @@ from . import models
 
 class CategoriaPropiedadesForm(forms.ModelForm):
     class Meta:
-        model = models.CategoriaPropiedades
+        model = models.CategoriaPropiedad
         fields = "__all__"
 
 
