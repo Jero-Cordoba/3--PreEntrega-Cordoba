@@ -22,7 +22,7 @@ def login_request(request: HttpRequest) -> HttpResponse:
             user = authenticate(username=usuario, password=password)
             if user is not None:
                 login(request, user)
-                return redirect(request, 'home/index.html', {"mensaje": "Inicio de sesión exitoso"})
+#                return redirect(request, 'home/index.html', {"mensaje": "Inicio de sesión exitoso"})
     else:
         form = forms.CustomAuthenticationForm()
     return render(request, 'home/login.html', {'form': form})

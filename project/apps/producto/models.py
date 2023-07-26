@@ -9,7 +9,7 @@ class CategoriaPropiedad(models.Model):
 
 
 class Meta:
-    verbose_name = "Categoria de propiedades"
+    verbose_name = "Categoria de propiedad"
     verbose_name_plural = "Categorias de propiedades"
 
 

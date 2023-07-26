@@ -1,4 +1,4 @@
-{% extends 'home/base.html' %}
+{% extends 'Inicio/base.html' %}
 {% load static %}
 
 {% block BASE_CONTENIDO %}
@@ -23,10 +23,10 @@
 
         {% if user.is_staff%}
             <div class="row">
-                <a href="{% url 'home:index' %}" class="btn btn-outline-dark"> Panel de administración</a>
+                <a href="{% url 'Inicio:index' %}" class="btn btn-outline-dark"> Panel de administración</a>
             </div>
             <div class="row">        
-                <a href="{% url 'home:register' %}" class="btn btn-outline-dark"> Configuración</a>
+                <a href="{% url 'Inicio:register' %}" class="btn btn-outline-dark"> Configuración</a>
             </div>
         {% endif %}
 
@@ -42,7 +42,7 @@
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
         
-        {% include 'home/card.html' with card="Departamento en Tacuarí"%}
+        {% include 'Inicio/card.html' with card="Departamento en Tacuarí"%}
 
     </div>
     {% endblock INDEX_CONTENIDO %}
