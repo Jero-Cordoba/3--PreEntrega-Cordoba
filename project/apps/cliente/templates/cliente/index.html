@@ -1,16 +1,16 @@
 {% extends 'home/index.html' %}
 
-{% block TITULO %} Cliente {% endblock TITULO%}
+{% block TITULO %} Cliente {% endblock TITULO %}
 
 {% block INDEX_CONTENIDO %}
 
-    {% for cliente in clientes %}
-        <h2>{{cliente.nombre}} {{cliente.apellido}}</h2>
-        <p>{{cliente.nacimiento}} {{cliente.pais_origen_id}}</p>
-        <p>{{cliente.documento}} {{cliente.telefono}}</p>
-        <p>{{cliente.email}}</p>
-    {% endfor %}
+    {% if cliente in clientes %}
+        <h2>{{ cliente.nombre }} {{ cliente.apellido }}</h2>
+        <p>{{ cliente.nacimiento }} {{ cliente.pais_origen_id }}</p>
+        <p>{{ cliente.documento }} {{ cliente.telefono }}</p>
+        <p>{{ cliente.email }}</p>
+    {% endif %}
 
-    <a href="{% url 'home:home' %}">Ir a clientes</a>
+    <a href="{% url 'home:home' %}">Ir al menú principal</a>
 
 {% endblock INDEX_CONTENIDO %}

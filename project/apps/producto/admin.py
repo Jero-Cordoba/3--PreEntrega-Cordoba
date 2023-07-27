@@ -4,8 +4,6 @@ from . import models
 
 admin.site.site_title = "Propiedad"
 
-# admin.site.register(models.CategoriaPropiedades)
-
 
 @admin.register(models.CategoriaPropiedad)
 class CategoriaPropiedadAdmin(admin.ModelAdmin):
