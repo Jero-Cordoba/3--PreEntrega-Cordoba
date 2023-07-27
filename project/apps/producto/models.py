@@ -7,6 +7,9 @@ class CategoriaPropiedad(models.Model):
     descripcion = models.CharField(
         max_length=255, null=True, blank=True, verbose_name="Descripción")
 
+    def __str__(self):
+        return self.nombre
+
 
 class Meta:
     verbose_name = "Categoria de propiedad"
